@@ -1,0 +1,33 @@
+.container {
+  height: 100px;
+  padding: 5px;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.imageContainer {
+  height: 100%;
+  min-width: 20%;
+}
+
+.image {
+  object-fit: contain;
+  height: 100%;
+}
+
+.textContainer {
+  padding-left: 10px;
+  text-align: left;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.textWrapper h1 {
+  font-size: 15px;
+}
