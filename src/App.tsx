@@ -13,10 +13,8 @@ function App() {
 
   const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(value);
     const response = await fetch(`${URL}s=${value}`);
     const result = await response.json();
-    console.log(result);
     setMovies(result.Search);
   };
 

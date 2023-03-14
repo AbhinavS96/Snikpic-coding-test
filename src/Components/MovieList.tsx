@@ -6,6 +6,7 @@ const MovieList: React.FC<{ movies: movieType[] | [] }> = (props) => {
   if (!props.movies) {
     return <div>No results found!</div>;
   }
+
   return (
     <>
       <ul>
