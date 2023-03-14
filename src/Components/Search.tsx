@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { movieType } from "../Models/Movie";
-import Movies from "./Movies";
+import MovieList from "./MovieList";
 
 const key = "d37dede0";
 const URL = `http://www.omdbapi.com/?apikey=${key}&`;
@@ -28,7 +28,7 @@ const Search: React.FC = () => {
         <input type="text" value={input} onChange={inputHandler}></input>
         <button>Search!</button>
       </form>
-      <Movies movies={movies}></Movies>
+      <MovieList movies={movies}></MovieList>
     </>
   );
 };
