@@ -3,6 +3,7 @@ import styles from "./Movie.module.css";
 
 const Movie: React.FC<{ movie: movieType }> = (props) => {
   const { Title, Year, Poster } = props.movie;
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>

@@ -1,34 +1,18 @@
-import { useState } from "react";
-import { movieType } from "../Models/movie";
-import MovieList from "./MovieList";
-
-const key = "d37dede0";
-const URL = `http://www.omdbapi.com/?apikey=${key}&`;
-
-const Search: React.FC = () => {
-  const [input, setInput] = useState("");
-  const [movies, setMovies] = useState<movieType[] | []>([]);
-  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(event.target.value);
-  };
-  const doSearch = async () => {
-    const response = await fetch(`${URL}s=${input}`);
-    const result = await response.json();
-    console.log(result);
-    setMovies(result.Search);
-  };
-  const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    doSearch();
-    setInput("");
-  };
+const Search: React.FC<{
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}> = (props) => {
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <input type="text" value={input} onChange={inputHandler}></input>
+      <form onSubmit={props.onSubmit}>
+        <input
+          type="text"
+          value={props.value}
+          onChange={props.onChange}
+        ></input>
         <button>Search!</button>
       </form>
-      <MovieList movies={movies}></MovieList>
     </>
   );
 };
