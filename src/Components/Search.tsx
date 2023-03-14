@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { movieType } from "../Models/Movie";
+import { movieType } from "../Models/movie";
 import MovieList from "./MovieList";
 
 const key = "d37dede0";
